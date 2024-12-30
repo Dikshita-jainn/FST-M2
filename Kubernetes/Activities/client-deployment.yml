@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: client-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       component: web
@@ -12,12 +12,12 @@ spec:
       labels:
         component: web
     spec:
-      containers:
-        - name: client
-          image: docker.io/dikshitajain1/complex_client
-          ports:
+        containers:
+          - name: client
+            image: docker.io/axelsilverdew/complex_client
+            ports:
             - containerPort: 3000
-          resources:                
+            resources:
             limits:
               memory: "128Mi"
               cpu: "500m"
